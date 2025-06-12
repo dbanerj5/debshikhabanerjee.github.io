@@ -14,34 +14,35 @@ author_profile: true
 
 {% include base_path %}
 
+{% comment %} Initialize a global paper counter {% endcomment %}
+{% assign paper_count = 0 %}
+
 {% comment %}
   Group all publications by 4-digit year, sort newest-first
 {% endcomment %}
-{% assign pubs_by_year = site.publications 
-     | group_by_exp: "item", "item.date | date: '%Y'" 
+{% assign pubs_by_year = site.publications
+     | group_by_exp: "item", "item.date | date: '%Y'"
      | sort: "name" %}
 
 {% for year_group in pubs_by_year reversed %}
 
   <h2><strong>{{ year_group.name }}</strong></h2>
-  <ol class="pub-list">
+  <ul class="pub-list">
     {% for pub in year_group.items %}
+      {% assign paper_count = paper_count | plus: 1 %}
       <li>
+        {{ paper_count }}. 
         {% if pub.paperurl %}
           <a href="{{ pub.paperurl }}">{{ pub.title }}</a>
         {% else %}
           {{ pub.title }}
         {% endif %}, 
         <em>{{ pub.venue }}</em>, 
-        {{ pub.date | date: "%Y" }};
-        {{ pub.authors 
+        {{ pub.date | date: "%Y" }};  
+        {{ pub.authors
             | replace: "Debshikha Banerjee", "<strong>Debshikha Banerjee</strong>" }}
       </li>
     {% endfor %}
-  </ol>
+  </ul>
 
 {% endfor %}
-
-
-
-
