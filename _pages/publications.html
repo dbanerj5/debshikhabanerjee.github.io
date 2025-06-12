@@ -14,31 +14,31 @@ author_profile: true
 
 {% include base_path %}
 
-{% comment %} Initialize a global paper counter {% endcomment %}
+{% comment %} Initialize global paper counter {% endcomment %}
 {% assign paper_count = 0 %}
 
-{% comment %}
-  Group all publications by 4-digit year, sort newest-first
-{% endcomment %}
-{% assign pubs_by_year = site.publications
+{% comment %} Sort all publications by date ascending, then group by year {% endcomment %}
+{% assign sorted_pubs = site.publications | sort: "date" %}
+{% assign pubs_by_year = sorted_pubs
      | group_by_exp: "item", "item.date | date: '%Y'"
      | sort: "name" %}
 
-{% for year_group in pubs_by_year reversed %}
+{% for year_group in pubs_by_year %}
 
   <h2><strong>{{ year_group.name }}</strong></h2>
   <ul class="pub-list">
-    {% for pub in year_group.items %}
+    {% assign year_items = year_group.items | sort: "date" %}
+    {% for pub in year_items %}
       {% assign paper_count = paper_count | plus: 1 %}
       <li>
-        {{ paper_count }}. 
+        {{ paper_count }}.
         {% if pub.paperurl %}
           <a href="{{ pub.paperurl }}">{{ pub.title }}</a>
         {% else %}
           {{ pub.title }}
-        {% endif %}, 
-        <em>{{ pub.venue }}</em>, 
-        {{ pub.date | date: "%Y" }};  
+        {% endif %},
+        <em>{{ pub.venue }}</em>,
+        {{ pub.date | date: "%Y" }};
         {{ pub.authors
             | replace: "Debshikha Banerjee", "<strong>Debshikha Banerjee</strong>" }}
       </li>
