@@ -215,6 +215,9 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
+  presentations:
+    output: true
+    permalink: /presentations/:path/
   teaching:
     output: true
     permalink: /:collection/:path/
