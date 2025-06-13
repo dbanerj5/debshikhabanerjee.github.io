@@ -11,14 +11,14 @@ author_profile: true
 {% assign talk_count = 0 %}
 
 {% comment %}
-  Sort all talks by date ascending, then group them by 4-digit year
+  Sort all presentations by date ascending, then group them by 4-digit year
 {% endcomment %}
-{% assign sorted_talks = site.talks | sort: "date" %}
-{% assign talks_by_year = sorted_talks
+{% assign sorted_presentations = site.presentations | sort: "date" %}
+{% assign presentations_by_year = sorted_presentations
      | group_by_exp: "item", "item.date | date: '%Y'"
      | sort: "name" %}
 
-{% for year_group in talks_by_year %}
+{% for year_group in presentations_by_year %}
   <h2><strong>{{ year_group.name }}</strong></h2>
   <ul class="presentation-list">
     {% assign year_items = year_group.items | sort: "date" %}
