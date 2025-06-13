@@ -2,9 +2,9 @@
 title: "SmoQyDEAC.jl: A differential evolution package for the analytic continuation of imaginary time correlation functions"
 collection: publications
 category: manuscripts
-authors: "James Neuhaus, Nathan S. Nichols, Debshikha Banerjee, Benjamin Cohen-Stead, Thomas A. Maier, Adrian Del Maestro, Steven Johnston"
+authors: "James Neuhaus, Nathan S. Nichols, Debshikha Banerjee, Benjamin Cohen-Stead, Thomas A. Maier, Adrian Del Maestro, Steven Johnston."
 date:   2024-11-12
-venue:  "SciPost Phys. Codebases 39 (2024)"
+venue:  "SciPost Phys. Codebases 39"
 paperurl: "https://www.scipost.org/SciPostPhysCodeb.39"
 bibtexurl: # "/files/bibtex-my-new-paper.bib"   # optional
 slidesurl: # "/files/slides-my-new-paper.pdf"   # optional
