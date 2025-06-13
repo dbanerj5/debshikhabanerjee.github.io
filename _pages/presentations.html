@@ -7,17 +7,18 @@ author_profile: true
 
 {% include base_path %}
 
-{% comment %} Initialize global talk counter {% endcomment %}
+{% comment %} Initialize a global talk counter {% endcomment %}
 {% assign talk_count = 0 %}
 
-{% comment %} Sort all presentations by date ascending, then group by year {% endcomment %}
-{% assign sorted_talks = site.presentations | sort: "date" %}
+{% comment %}
+  Sort all talks by date ascending, then group them by 4-digit year
+{% endcomment %}
+{% assign sorted_talks = site.talks | sort: "date" %}
 {% assign talks_by_year = sorted_talks
      | group_by_exp: "item", "item.date | date: '%Y'"
      | sort: "name" %}
 
 {% for year_group in talks_by_year %}
-
   <h2><strong>{{ year_group.name }}</strong></h2>
   <ul class="presentation-list">
     {% assign year_items = year_group.items | sort: "date" %}
@@ -25,17 +26,16 @@ author_profile: true
       {% assign talk_count = talk_count | plus: 1 %}
       <li>
         {{ talk_count }}.
+        {% if talk.speaker %}
+          <strong>{{ talk.speaker }}</strong> –
+        {% endif %}
         {% if talk.slidesurl %}
-          <a href="{{ talk.slidesurl }}">{{ talk.title }}</a>
+          <strong><a href="{{ talk.slidesurl }}">{{ talk.title }}</a></strong>
         {% else %}
-          {{ talk.title }}
+          <strong>{{ talk.title }}</strong>
         {% endif %},
-        <em>{{ talk.venue }}</em>,
-        {{ talk.date | date: "%Y" }};
-        {{ talk.authors
-            | replace: "Debshikha Banerjee", "<strong>Debshikha Banerjee</strong>" }}
+        {{ talk.venue }}, {{ talk.date | date: "%Y" }}
       </li>
     {% endfor %}
   </ul>
-
 {% endfor %}
