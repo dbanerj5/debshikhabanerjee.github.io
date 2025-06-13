@@ -5,7 +5,7 @@ speaker: Debshikha Banerjee
 type: "Talk"
 permalink: 
 venue: "APS Global Physics Summit"
-date: 2024-03-19
+date: 2025-03-19
 location: "Anaheim, CA, USA"
 ---
 
