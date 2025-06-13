@@ -1,11 +1,12 @@
 ---
-title: "Talk 1 on Relevant Topic in Your Field"
+title: "*Ground state and spectral properties of the doped one-dimensional optical Hubbard-Su-Schrieffer-Heeger model*"
 collection: talks
+speaker: Debshikha Banerjee
 type: "Talk"
-permalink: /talks/2012-03-01-talk-1
-venue: "UC San Francisco, Department of Testing"
-date: 2012-03-01
-location: "San Francisco, CA, USA"
+permalink: 
+venue: "APS March Meeting"
+date: 2023-03-08
+location: "Las Vegas, NV, USA"
 ---
 
 This is a description of your talk, which is a markdown file that can be all markdown-ified like any other post. Yay markdown!
