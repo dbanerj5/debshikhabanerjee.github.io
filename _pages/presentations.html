@@ -27,11 +27,11 @@ author_profile: true
       <li>
         {{ talk_count }}. 
         {% if talk.slidesurl %}
-          <em><a href="{{ talk.slidesurl }}">{{ talk.title }}</a></em>
+          <strong><a href="{{ talk.slidesurl }}">{{ talk.title }}</a></strong>
         {% else %}
-          <em>{{ talk.title }}</em>
+          <strong>{{ talk.title }}</strong>
         {% endif %}
-        <br />
+        <br/>
         {% if talk.speaker %}{{ talk.speaker }}{% endif %}
         {% if talk.venue %}, {{ talk.venue }}{% endif %}
         {% if talk.date %}, {{ talk.date | date: "%Y" }}{% endif %}
