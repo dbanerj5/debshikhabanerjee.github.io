@@ -4,7 +4,7 @@ collection: talks
 speaker: James Neuhaus
 type: "Talk"
 permalink: 
-venue: "APS March Meeting 2024"
+venue: "APS March Meeting"
 date: 2024-03-06
 location: "Minneapolis, MN, USA"
 ---
