@@ -1,5 +1,5 @@
 ---
-title: "**Ground state and spectral properties of the doped one-dimensional optical Hubbard-Su-Schrieffer-Heeger model**"
+title: "Ground state and spectral properties of the doped one-dimensional optical Hubbard-Su-Schrieffer-Heeger model"
 collection: talks
 speaker: Debshikha Banerjee
 type: "Talk"
